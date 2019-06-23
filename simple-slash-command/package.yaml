@@ -1,0 +1,35 @@
+name:                simple-slash-command
+version:             0.1.0
+github:              "githubuser/simple-slash-command"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+description:         Please see the README on GitHub at <https://github.com/githubuser/simple-slash-command#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aws-lambda-haskell-runtime >= 1.0.9
+- aeson
+
+library:
+  source-dirs: src
+
+executables:
+  haskell_lambda:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - simple-slash-command
+
+default-extensions:
+  - TemplateHaskell
+  - RecordWildCards
+  - OverloadedLists
+  - OverloadedStrings
+  - DeriveGeneric
